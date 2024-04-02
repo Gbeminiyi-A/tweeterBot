@@ -27,7 +27,8 @@ client = tweepy.Client(
 response = requests.get('https://africanproverbs.onrender.com/api/proverb')
 response = response.json()
 
-text = f"Proverb: {response['proverb'].title()}\nOrigin: {response['native'].title()}"
+text = (f"Proverb: {response['proverb'].title()}\nOrigin: {response['native'].title()}\nFrom: https://africanproverbs"
+        f".onrender.com/api/proverb")
 
 if __name__ == "__main__":
     client.create_tweet(text=text, user_auth=True)
