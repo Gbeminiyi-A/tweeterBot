@@ -1,5 +1,9 @@
 import tweepy
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 CLIENT_ID = "SVUwTmh5ZW1xNzRyT1ljQWdQSTc6MTpjaQ"
@@ -9,9 +13,9 @@ ACCESS_TOKEN = "1775222552576622592-oRScR58GN3S2k0hSNkSwl7Vy1fu1vJ"
 ACCESS_TOKEN_SECRET = "mKn954XKBU915DjiKfX1a2rV2dB4nmuycvx60GDnSWPhH"
 
 API_KEY = "ytdeI9s3YkU3o607pDd0fJluc"
-API_SCERET_KEY = "gqjWn0ICFOLkprKWSMacYZWb0zlkMxJbXPb9JJMvPqUyyGBSQV"
+API_SECRET_KEY = "gqjWn0ICFOLkprKWSMacYZWb0zlkMxJbXPb9JJMvPqUyyGBSQV"
 
-auth = tweepy.OAuthHandler(API_KEY, API_SCERET_KEY)
+auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
 
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
@@ -19,7 +23,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True,)
 
 client = tweepy.Client(
     consumer_key=API_KEY,
-    consumer_secret=API_SCERET_KEY,
+    consumer_secret=API_SECRET_KEY,
     access_token=ACCESS_TOKEN,
     access_token_secret=ACCESS_TOKEN_SECRET,
 )
