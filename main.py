@@ -31,7 +31,7 @@ client = tweepy.Client(
 response = requests.get('https://africanproverbs.onrender.com/api/proverb')
 response = response.json()
 
-text = (f"Proverb: {response['proverb'].title()}\nOrigin: {response['native'].title()}\nFrom: https://africanproverbs"
+text = (f"{response['proverb'].title()}\n\n~ {response['native'].title()}\nSource: https://africanproverbs"
         f".onrender.com/api/proverb")
 
 if __name__ == "__main__":
